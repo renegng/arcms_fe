@@ -10,33 +10,38 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     padding: '50px 100px 100px 100px',
+    alignItems: 'center',
+    background: '#F4F2F3'
   },
 
-  inputs: {
-    width: '200px'
-  },
-
-  addOrg: {
-    display:'flex',
-    flexDirection:'column',
-    marginBottom: '40px'
-  },
-
-  addInputs: {
+  scrollContainer: {
+    scrollSnapType: 'y mandatory',
+    scrollSnapPointsY: 'repeat(100vh)',
     display: 'flex',
-    justifyContent: 'space-between'
+    flexDirection: 'column'
   },
 
-
-  addOrgHeader: {
-    marginBottom: '30px'
+  scrollChild: {
+    borderBottom: '10px solid white',
+    padding: '1rem',
+    height: '80vh',
+    width: '80vw',
+    scrollSnapAlign: 'start',
+    textAlign: 'center',
+    // background: '#0B3C49'
   },
 
+  steps: {
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 'calc(1rem + 3vw)'
+  },
 
-  searchOrg: {
-    display:'flex',
-    flexDirection:'column',
+  buttons: {
+    background: 'white',
+    marginTop: '20rem'
   }
+
 }
 
 const Home = ({classes, orgData, searchOrgs, addOrg}) => {
@@ -47,96 +52,60 @@ const Home = ({classes, orgData, searchOrgs, addOrg}) => {
   const [typeInputVal, setTypeInputVal] = useState('')
   const [searchInputVal, setSearchInputVal] = useState('')
 
+const scrollToNext = (id) => {
+  let element = document.getElementById(id)
+  element.scrollIntoView({behavior: 'smooth'})
+}
 
-
-  const addOrgClick = () => {
-    let newOrg = {
-      orgName: nameInputVal,
-      startDate: dateInputVal,
-      employeeCount: employeeNumInputVal,
-      orgType: typeInputVal
-    }
-
-    addOrg(newOrg)
-  }
 
   return (
       <div className={classes.root}>
       <main>
-        <h1>ARCMS</h1>
+        <h1>Bienvenido a ARCMS</h1>
       </main>
-      {/* <div className={classes.addOrg}>
-        <Typography className={classes.addOrgHeader} component="h3">Create an organization</Typography>
-        <div className={classes.addInputs}>
+      <div className={classes.scrollContainer}>
+        <section className={classes.scrollChild} id='step1' style={{background: '#3A405A'}} >
+          <h2 className={classes.steps}>
+            Paso 1</h2>
+            <h3>Opciones</h3>
+            <Button className={classes.buttons} onClick={() => scrollToNext('step2')}>
+              Próximo Paso
+            </Button>
+        </section>
+        <section className={classes.scrollChild} id='step2' style={{background: '#0B3C49'}}>
+        <h2 className={classes.steps} >
+            Paso 2</h2>
+            <h3>Opciones</h3>
+            <Button className={classes.buttons} onClick={() => scrollToNext('step3')}>
+              Próximo Paso
+            </Button>
+        </section>
+        <section className={classes.scrollChild} id='step3' style={{background: '#731963'}}>
+        <h2 className={classes.steps}>
+            Paso 3</h2>
+            <h3>Opciones</h3>
+            <Button className={classes.buttons} onClick={() => scrollToNext('step4')}>
+              Próximo Paso
+            </Button>
+        </section>
+        <section className={classes.scrollChild} id='step4' style={{background: '#3A405A'}}>
+        <h2 className={classes.steps}>
+            Paso 4</h2>
+            <h3>Opciones</h3>
+            <Button className={classes.buttons} onClick={() => scrollToNext('step5')}>
+              Próximo Paso
+            </Button>
+        </section>
+        <section className={classes.scrollChild} id='step5' style={{background: '#78BC61'}}>
+        <h2 className={classes.steps}>
+            Paso 5</h2>
+            <h3>Opciones</h3>
+            <Button className={classes.buttons}>
+            Terminar la configuración
+            </Button>
+        </section>
 
-
-        <TextField
-        className={classes.inputs}
-        id="orgName"
-        variant="outlined"
-        label="*Required"
-        helperText="Name"
-        value={nameInputVal}
-        onChange={(e) => setNameInputVal(e.target.value)}
-        />
-        <TextField
-        className={classes.inputs}
-        id="startDate"
-        variant="outlined"
-        label="*Required"
-        helperText="Start date"
-        value={dateInputVal}
-        onChange={(e) => setDateInputVal(e.target.value)}
-        />
-        <TextField
-        className={classes.inputs}
-        id="employeeCount"
-        variant="outlined"
-        label="*Required"
-        helperText="Number of employees"
-        value={employeeNumInputVal}
-        onChange={(e) => setEmployeeNumInputVal(e.target.value)}
-        />
-        <TextField
-        className={classes.inputs}
-        id="type"
-        variant="outlined"
-        label="*Required"
-        helperText="Type"
-        value={typeInputVal}
-        onChange={(e) => setTypeInputVal(e.target.value)}
-        />
-        </div>
-        <Button style={{width: '20px', marginTop: '20px'}} variant="contained" onClick={addOrgClick} >Create</Button>
       </div>
-      <div className={classes.searchOrg}>
-      <Typography className={classes.addOrgHeader} component="h3">Search for an organization</Typography>
-        <TextField
-        className={classes.inputs} variant="outlined" value={searchInputVal} onChange={(e) => setSearchInputVal(e.target.value)} />
-        <Button variant="contained" color="primary" style={{width: '20px', marginTop: '20px'}}
-        onClick={() => searchOrgs(searchInputVal)}
-
-        >Search</Button>
-        <div className={classes.results}>
-        <Typography className={classes.addOrgHeader} style={{marginTop: '30px'}}component="h4">Results</Typography>
-        <table>
-          {orgData.map((org, idx) => {
-            return(
-              <tbody key={idx}>
-                <tr>
-              <td>name: {org.orgName} -- </td>
-              <td>start date: {org.startDate} -- </td>
-              <td>employee count: {org.employeeCount} -- </td>
-              <td>public or private: {org.orgType} -- </td>
-            </tr>
-              </tbody>
-            )
-        })}
-        </table>
-
-
-        </div>
-      </div> */}
     </div>
   )
 }
