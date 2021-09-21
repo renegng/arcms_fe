@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
-import { Home } from './components';
+import { Home, Setup } from './components';
 import './App.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <Route exact path='/' component={Home}/>
+        <Route exact path='/setup' component={Setup} />
       </Router>
     </div>
   );
