@@ -9,7 +9,7 @@ const styles = {
     flexDirection: 'column',
     padding: '50px 100px 100px 100px',
     alignItems: 'center',
-    background: '#3A405A'
+    // background: '#3A405A'
   },
 
   scrollContainer: {
@@ -20,14 +20,16 @@ const styles = {
   },
 
   scrollChild: {
-    borderBottom: '10px solid white',
+    // borderBottom: '10px solid white',
     padding: '1rem',
     height: '80vh',
     width: '80vw',
-    scrollSnapAlign: 'start',
+    scrollSnapAlign: 'center',
     textAlign: 'center',
-    background: 'rgba(255, 255, 255, .15)',
-    backdropFilter: 'saturate(180%) blur(10px)'
+    background: '#415A77',
+    backdropFilter: 'saturate(180%) blur(10px)',
+    marginTop: '40vh',
+    marginBottom: '40vh'
   },
 
   steps: {
@@ -60,10 +62,10 @@ const scrollToNext = (id) => {
   return (
       <div className={classes.root}>
       <main>
-        <h1>Bienvenido a ARCMS</h1>
+        <h1 style={{color: '#0D1B2A'}}>Bienvenido a ARCMS</h1>
       </main>
       <div className={classes.scrollContainer}>
-        <section className={classes.scrollChild} id='step1'  >
+        <section className={classes.scrollChild} id='step1'  style={{marginTop: '0'}}>
           <h2 className={classes.steps}>
             Paso 1</h2>
             <h3>Opciones</h3>
