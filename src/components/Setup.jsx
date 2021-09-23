@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import { withStyles, TextField, Typography, Button } from '@material-ui/core'
+import { withStyles, TextField, Typography, Button, Card} from '@material-ui/core'
 
 
 const styles = {
@@ -29,7 +29,8 @@ const styles = {
     background: '#415A77',
     backdropFilter: 'saturate(180%) blur(10px)',
     marginTop: '40vh',
-    marginBottom: '40vh'
+    marginBottom: '40vh',
+    borderRadius: '40px'
   },
 
   steps: {
@@ -39,19 +40,48 @@ const styles = {
   },
 
   buttons: {
-    background: 'white',
-    marginTop: '20rem'
+    background: '#E0E1DD',
+    // marginTop: '20rem'
+  },
+
+  stepOneInputs: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '70%'
   }
 
 }
 
 const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
 
-  // const [nameInputVal, setNameInputVal] = useState('')
-  // const [dateInputVal, setDateInputVal] = useState('')
-  // const [employeeNumInputVal, setEmployeeNumInputVal] = useState('')
-  // const [typeInputVal, setTypeInputVal] = useState('')
-  // const [searchInputVal, setSearchInputVal] = useState('')
+  /*
+  step1 fields:
+  - name
+  - description
+  - slogan
+  - institution name
+  -main logo
+  -menu/icon logo
+
+  step2 fields:
+  -color palette:
+    - primary
+    - secondary
+    - background
+    - surface
+    - on primary
+    - on secondary
+    - on background
+    - on surface
+
+  step3 fields
+  - social media (fb, twitter, ig, youtube, website)
+  - contact us/info
+  - whatsapp floating button (yes/no/whatsapp contact)
+
+
+
+  */
 
 const scrollToNext = (id) => {
   let element = document.getElementById(id)
@@ -65,15 +95,28 @@ const scrollToNext = (id) => {
         <h1 style={{color: '#0D1B2A'}}>Bienvenido a ARCMS</h1>
       </main>
       <div className={classes.scrollContainer}>
-        <section className={classes.scrollChild} id='step1'  style={{marginTop: '0'}}>
+        <Card className={classes.scrollChild} id='step1'  style={{marginTop: '0', background: '#778DA9'}}>
           <h2 className={classes.steps}>
             Paso 1</h2>
-            <h3>Opciones</h3>
-            <Button className={classes.buttons} onClick={() => scrollToNext('step2')}>
+            <div className={classes.stepOneInputs}>
+
+              <TextField style={{background: '#E0E1DD'}}variant="outlined" helperText="Nombre del website"/>
+
+              <TextField helperText="description of the site" multiline rows={4} variant="outlined" />
+
+              <TextField variant="outlined" helperText="site slogan"/>
+
+              <TextField variant="outlined" helperText="institution name" />
+
+              {/*main logo upload*/}
+              {/* menu/icon logo upload */}
+              
+            </div>
+<Button className={classes.buttons} onClick={() => scrollToNext('step2')}>
               Próximo Paso
             </Button>
-        </section>
-        <section className={classes.scrollChild} id='step2' >
+        </Card>
+        <section className={classes.scrollChild} id='step2' style={{background: '#415A77'}}>
         <h2 className={classes.steps} >
             Paso 2</h2>
             <h3>Opciones</h3>
@@ -81,15 +124,18 @@ const scrollToNext = (id) => {
               Próximo Paso
             </Button>
         </section>
-        <section className={classes.scrollChild} id='step3' >
+        <section className={classes.scrollChild} id='step3'  style={{background: '#1B263B'}}>
         <h2 className={classes.steps}>
             Paso 3</h2>
             <h3>Opciones</h3>
-            <Button className={classes.buttons} onClick={() => scrollToNext('step4')}>
-              Próximo Paso
+            <Button className={classes.buttons}>
+            Terminar la configuración
             </Button>
+            {/* <Button className={classes.buttons} onClick={() => scrollToNext('step4')}>
+              Próximo Paso
+            </Button> */}
         </section>
-        <section className={classes.scrollChild} id='step4' >
+        {/* <section className={classes.scrollChild} id='step4' >
         <h2 className={classes.steps}>
             Paso 4</h2>
             <h3>Opciones</h3>
@@ -104,7 +150,7 @@ const scrollToNext = (id) => {
             <Button className={classes.buttons}>
             Terminar la configuración
             </Button>
-        </section>
+        </section> */}
 
       </div>
     </div>
