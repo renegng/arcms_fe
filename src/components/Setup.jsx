@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import { withStyles, TextField, Typography, Button, Card} from '@material-ui/core'
+import { SketchPicker } from 'react-color'
 
 
 const styles = {
@@ -22,7 +23,7 @@ const styles = {
   scrollChild: {
     // borderBottom: '10px solid white',
     padding: '1rem',
-    height: '80vh',
+    // height: '80vh',
     width: '80vw',
     scrollSnapAlign: 'center',
     textAlign: 'center',
@@ -49,6 +50,11 @@ const styles = {
     flexDirection: 'column',
     width: '100%',
     // alignItems: 'center'
+  },
+
+  colorPicker: {
+    marginBottom: '20px',
+    alignSelf: 'center'
   }
 
 }
@@ -117,26 +123,34 @@ const scrollToNext = (id) => {
               Próximo Paso
             </Button>
         </Card>
-        <Card className={classes.scrollChild} id='step2' style={{background: '#415A77'}}>
+        <Card className={classes.scrollChild} id='step2' style={{background: '#778DA9'}}>
         <h2 className={classes.steps} >
             Paso 2</h2>
             
             <div className={classes.stepOneInputs}>
 
-              <TextField variant="filled" helperText="Nombre del website"/>
+              <SketchPicker className={classes.colorPicker} />
 
-              <TextField helperText="description of the site" multiline rows={4} variant="filled" />
+              <TextField variant="filled" helperText="primary color"/>
 
-              <TextField variant="filled" helperText="site slogan"/>
+              <TextField variant="filled" helperText="background"/>
 
-              <TextField variant="filled" helperText="institution name" />
+              <TextField variant="filled" helperText="surface" />
+
+              <TextField variant="filled" helperText="on primary" />
+
+              <TextField variant="filled" helperText="on secondary" />
+
+              <TextField variant="filled" helperText="on background" />
+
+              <TextField variant="filled" helperText="on surface" />
               </div>
             <Button className={classes.buttons} onClick={() => scrollToNext('step3')}>
               Próximo Paso
             </Button>
         </Card>
 
-        <Card className={classes.scrollChild} id='step3'  style={{background: '#1B263B'}}>
+        <Card className={classes.scrollChild} id='step3'  style={{background: '#778DA9'}}>
         <h2 className={classes.steps}>
             Paso 3</h2>
             <div className={classes.stepOneInputs}>
