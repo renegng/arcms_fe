@@ -47,7 +47,8 @@ const styles = {
   stepOneInputs: {
     display: 'flex',
     flexDirection: 'column',
-    width: '70%'
+    width: '100%',
+    // alignItems: 'center'
   }
 
 }
@@ -100,13 +101,13 @@ const scrollToNext = (id) => {
             Paso 1</h2>
             <div className={classes.stepOneInputs}>
 
-              <TextField style={{background: '#E0E1DD'}}variant="outlined" helperText="Nombre del website"/>
+              <TextField variant="filled" helperText="Nombre del website"/>
 
-              <TextField helperText="description of the site" multiline rows={4} variant="outlined" />
+              <TextField helperText="description of the site" multiline rows={4} variant="filled" />
 
-              <TextField variant="outlined" helperText="site slogan"/>
+              <TextField variant="filled" helperText="site slogan"/>
 
-              <TextField variant="outlined" helperText="institution name" />
+              <TextField variant="filled" helperText="institution name" />
 
               {/*main logo upload*/}
               {/* menu/icon logo upload */}
@@ -116,25 +117,46 @@ const scrollToNext = (id) => {
               Próximo Paso
             </Button>
         </Card>
-        <section className={classes.scrollChild} id='step2' style={{background: '#415A77'}}>
+        <Card className={classes.scrollChild} id='step2' style={{background: '#415A77'}}>
         <h2 className={classes.steps} >
             Paso 2</h2>
-            <h3>Opciones</h3>
+            
+            <div className={classes.stepOneInputs}>
+
+              <TextField variant="filled" helperText="Nombre del website"/>
+
+              <TextField helperText="description of the site" multiline rows={4} variant="filled" />
+
+              <TextField variant="filled" helperText="site slogan"/>
+
+              <TextField variant="filled" helperText="institution name" />
+              </div>
             <Button className={classes.buttons} onClick={() => scrollToNext('step3')}>
               Próximo Paso
             </Button>
-        </section>
-        <section className={classes.scrollChild} id='step3'  style={{background: '#1B263B'}}>
+        </Card>
+
+        <Card className={classes.scrollChild} id='step3'  style={{background: '#1B263B'}}>
         <h2 className={classes.steps}>
             Paso 3</h2>
-            <h3>Opciones</h3>
+            <div className={classes.stepOneInputs}>
+
+              <TextField variant="filled" helperText="Nombre del website"/>
+
+              <TextField helperText="description of the site" multiline rows={4} variant="filled" />
+
+              <TextField variant="filled" helperText="site slogan"/>
+
+              <TextField variant="filled" helperText="institution name" />
+              </div>
+
             <Button className={classes.buttons}>
             Terminar la configuración
             </Button>
             {/* <Button className={classes.buttons} onClick={() => scrollToNext('step4')}>
               Próximo Paso
             </Button> */}
-        </section>
+        </Card>
         {/* <section className={classes.scrollChild} id='step4' >
         <h2 className={classes.steps}>
             Paso 4</h2>
