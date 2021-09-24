@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import { withStyles, TextField, Typography, Button, Card} from '@material-ui/core'
+import { withStyles, TextField, Typography, Button, Card, RadioGroup} from '@material-ui/core'
 import { SketchPicker } from 'react-color'
 
 
@@ -99,21 +99,24 @@ const scrollToNext = (id) => {
   return (
       <div className={classes.root}>
       <main>
-        <h1 style={{color: '#0D1B2A'}}>Bienvenido a ARCMS</h1>
+        <h1 style={{color: '#0D1B2A'}}>Configuración del sitio web de ARCMS</h1>
       </main>
       <div className={classes.scrollContainer}>
         <Card className={classes.scrollChild} id='step1'  style={{marginTop: '0', background: '#778DA9'}}>
           <h2 className={classes.steps}>
             Paso 1</h2>
+            <h3 style={{color: 'white'}}>
+              Information about your site
+            </h3>
             <div className={classes.stepOneInputs}>
 
-              <TextField variant="filled" helperText="Nombre del website"/>
+              <TextField variant="filled" helperText="Website name"/>
 
-              <TextField helperText="description of the site" multiline rows={4} variant="filled" />
+              <TextField helperText="Description of the site" multiline rows={4} variant="filled" />
 
-              <TextField variant="filled" helperText="site slogan"/>
+              <TextField variant="filled" helperText="Site slogan"/>
 
-              <TextField variant="filled" helperText="institution name" />
+              <TextField variant="filled" helperText="Institution name" />
 
               {/*main logo upload*/}
               {/* menu/icon logo upload */}
@@ -126,24 +129,27 @@ const scrollToNext = (id) => {
         <Card className={classes.scrollChild} id='step2' style={{background: '#778DA9'}}>
         <h2 className={classes.steps} >
             Paso 2</h2>
+            <h3 style={{color: 'white'}}>
+              Choose your color palette
+            </h3>
             
             <div className={classes.stepOneInputs}>
 
               <SketchPicker className={classes.colorPicker} />
 
-              <TextField variant="filled" helperText="primary color"/>
+              <TextField variant="filled" helperText="Primary color"/>
 
-              <TextField variant="filled" helperText="background"/>
+              <TextField variant="filled" helperText="Background"/>
 
-              <TextField variant="filled" helperText="surface" />
+              <TextField variant="filled" helperText="Surface" />
 
-              <TextField variant="filled" helperText="on primary" />
+              <TextField variant="filled" helperText="On primary" />
 
-              <TextField variant="filled" helperText="on secondary" />
+              <TextField variant="filled" helperText="On secondary" />
 
-              <TextField variant="filled" helperText="on background" />
+              <TextField variant="filled" helperText="On background" />
 
-              <TextField variant="filled" helperText="on surface" />
+              <TextField variant="filled" helperText="On surface" />
               </div>
             <Button className={classes.buttons} onClick={() => scrollToNext('step3')}>
               Próximo Paso
@@ -153,15 +159,32 @@ const scrollToNext = (id) => {
         <Card className={classes.scrollChild} id='step3'  style={{background: '#778DA9'}}>
         <h2 className={classes.steps}>
             Paso 3</h2>
+            <h3 style={{color: 'white'}}>
+              Social media info
+            </h3>
             <div className={classes.stepOneInputs}>
 
-              <TextField variant="filled" helperText="Nombre del website"/>
+              <h4 style={{color: 'white'}}>
+              Social media
+            </h4>
+              <TextField variant="filled" helperText="Facebook"/>
+              <TextField variant="filled" helperText="Twitter"/>
+              <TextField variant="filled" helperText="Instagram"/>
+              <TextField variant="filled" helperText="YouTube"/>
+              <TextField variant="filled" helperText="Other"/>
 
-              <TextField helperText="description of the site" multiline rows={4} variant="filled" />
+              <h4 style={{color: 'white'}}>
+              Contact info
+            </h4>
 
-              <TextField variant="filled" helperText="site slogan"/>
+              <TextField variant="filled" helperText="Email"/>
+              <TextField variant="filled" helperText="Phone number"/>
 
-              <TextField variant="filled" helperText="institution name" />
+              <h4 style={{color: 'white'}}>
+              WhatsApp floating button
+            </h4>
+
+              <TextField variant="filled" helperText="WhatsApp number" />
               </div>
 
             <Button className={classes.buttons}>
