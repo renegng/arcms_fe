@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import { withStyles, TextField, Typography, Button, Card, RadioGroup} from '@material-ui/core'
+import { withStyles, Tab, Tabs, AppBar} from '@material-ui/core'
+import {TabList, TabPanel, TabContext} from '@mui/lab'
+import {StepOne, StepThree, StepTwo} from './SetupSteps'
 import { SketchPicker } from 'react-color'
 
 
@@ -13,50 +15,9 @@ const styles = {
     // background: '#3A405A'
   },
 
-  scrollContainer: {
-    scrollSnapType: 'y mandatory',
-    scrollSnapPointsY: 'repeat(100vh)',
-    display: 'flex',
-    flexDirection: 'column'
-  },
-
-  scrollChild: {
-    // borderBottom: '10px solid white',
-    padding: '1rem',
-    // height: '80vh',
-    width: '80vw',
-    scrollSnapAlign: 'center',
-    textAlign: 'center',
-    background: '#415A77',
-    backdropFilter: 'saturate(180%) blur(10px)',
-    marginTop: '40vh',
-    marginBottom: '40vh',
-    borderRadius: '40px'
-  },
-
-  steps: {
-    textAlign: 'center',
-    color: 'white',
-    fontSize: 'calc(1rem + 3vw)'
-  },
-
-  buttons: {
-    background: '#E0E1DD',
-    // marginTop: '20rem'
-  },
-
-  stepOneInputs: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    // alignItems: 'center'
-  },
-
-  colorPicker: {
-    marginBottom: '20px',
-    alignSelf: 'center'
+  tabContainer: {
+    background: '#9DD9D2',
   }
-
 }
 
 const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
@@ -90,110 +51,50 @@ const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
 
   */
 
-const scrollToNext = (id) => {
-  let element = document.getElementById(id)
-  element.scrollIntoView({behavior: 'smooth'})
-}
+  const [value, setValue] = React.useState('1');
+
+  const handleTabChange = (event, newValue) => {
+    setValue(newValue);
+  }; 
+
 
 
   return (
       <div className={classes.root}>
       <main>
-        <h1 style={{color: '#0D1B2A'}}>Configuración del sitio web de ARCMS</h1>
+        <h1 style={{color: '#FF8811'}}>Configuración del sitio web de ARCMS</h1>
       </main>
-      <div className={classes.scrollContainer}>
-        <Card className={classes.scrollChild} id='step1'  style={{marginTop: '0', background: '#778DA9'}}>
-          <h2 className={classes.steps}>
-            Paso 1</h2>
-            <h3 style={{color: 'white'}}>
-              Information about your site
-            </h3>
-            <div className={classes.stepOneInputs}>
 
-              <TextField variant="filled" helperText="Website name"/>
+        <TabContext value={value}>
+        <Tabs onChange={handleTabChange} textColor='#392F5A' indicatorColor='#392F5A' className={classes.tabContainer}>
+        <Tab label="step 1" value="1" />
+        <Tab label="step 2" value="2" />
+        <Tab label="step 3" value="3" />
+      </Tabs>
+        <TabPanel value='1'>
+          <StepOne />
+        </TabPanel>
+        <TabPanel value='2'>
+          <StepTwo />
+        </TabPanel>
+        <TabPanel value='3'>
+          <StepThree />
+        </TabPanel>
 
-              <TextField helperText="Description of the site" multiline rows={4} variant="filled" />
 
-              <TextField variant="filled" helperText="Site slogan"/>
 
-              <TextField variant="filled" helperText="Institution name" />
+      </TabContext>
 
-              {/*main logo upload*/}
-              {/* menu/icon logo upload */}
-              
-            </div>
-<Button className={classes.buttons} onClick={() => scrollToNext('step2')}>
-              Próximo Paso
-            </Button>
-        </Card>
-        <Card className={classes.scrollChild} id='step2' style={{background: '#778DA9'}}>
-        <h2 className={classes.steps} >
-            Paso 2</h2>
-            <h3 style={{color: 'white'}}>
-              Choose your color palette
-            </h3>
-            
-            <div className={classes.stepOneInputs}>
-
-              <SketchPicker className={classes.colorPicker} />
-
-              <TextField variant="filled" helperText="Primary color"/>
-
-              <TextField variant="filled" helperText="Background"/>
-
-              <TextField variant="filled" helperText="Surface" />
-
-              <TextField variant="filled" helperText="On primary" />
-
-              <TextField variant="filled" helperText="On secondary" />
-
-              <TextField variant="filled" helperText="On background" />
-
-              <TextField variant="filled" helperText="On surface" />
-              </div>
-            <Button className={classes.buttons} onClick={() => scrollToNext('step3')}>
-              Próximo Paso
-            </Button>
-        </Card>
-
-        <Card className={classes.scrollChild} id='step3'  style={{background: '#778DA9'}}>
-        <h2 className={classes.steps}>
-            Paso 3</h2>
-            <h3 style={{color: 'white'}}>
-              Social media info
-            </h3>
-            <div className={classes.stepOneInputs}>
-
-              <h4 style={{color: 'white'}}>
-              Social media
-            </h4>
-              <TextField variant="filled" helperText="Facebook"/>
-              <TextField variant="filled" helperText="Twitter"/>
-              <TextField variant="filled" helperText="Instagram"/>
-              <TextField variant="filled" helperText="YouTube"/>
-              <TextField variant="filled" helperText="Other"/>
-
-              <h4 style={{color: 'white'}}>
-              Contact info
-            </h4>
-
-              <TextField variant="filled" helperText="Email"/>
-              <TextField variant="filled" helperText="Phone number"/>
-
-              <h4 style={{color: 'white'}}>
-              WhatsApp floating button
-            </h4>
-
-              <TextField variant="filled" helperText="WhatsApp number" />
-              </div>
-
-            <Button className={classes.buttons}>
-            Terminar la configuración
-            </Button>
-            {/* <Button className={classes.buttons} onClick={() => scrollToNext('step4')}>
-              Próximo Paso
-            </Button> */}
-        </Card>
+      
+      
+        
+          
+        
+          
+      
+        
+        
+        
         {/* <section className={classes.scrollChild} id='step4' >
         <h2 className={classes.steps}>
             Paso 4</h2>
@@ -211,7 +112,7 @@ const scrollToNext = (id) => {
             </Button>
         </section> */}
 
-      </div>
+      
     </div>
   )
 }
