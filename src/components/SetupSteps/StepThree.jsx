@@ -96,7 +96,7 @@ const StepThree = ({classes}) => {
           }}/>
               </div>
 
-            <Button className={classes.buttons}>
+            <Button variant='outlined' className={classes.buttons}>
             Próximo Paso
             </Button>
         </Card>

@@ -67,7 +67,7 @@ const StepOne = ({classes}) => {
               {/* menu/icon logo upload */}
               
             </div>
-<Button className={classes.buttons}>
+<Button variant='outlined' className={classes.buttons}>
               Próximo Paso
             </Button>
         </Card>
