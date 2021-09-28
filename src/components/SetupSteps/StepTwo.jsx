@@ -69,7 +69,7 @@ const StepTwo = ({classes}) => {
         <Card className={classes.root} id='step2' >
         <h2 className={classes.steps} >
             Paso 2</h2>
-            <h3 style={{color: 'white'}}>
+            <h3 style={{color: '#FF8811'}}>
               Choose your color palette
             </h3>
             
@@ -79,7 +79,7 @@ const StepTwo = ({classes}) => {
 
               <TextField value={primaryColor} variant="outlined" className={classes.textfields} placeholder="Primary color" InputProps={{endAdornment:
                 <IconButton
-                  onClick={() => openPrimarySwatch(true)}
+                  onClick={() => openPrimarySwatch(!primarySwatch)}
                   edge="end"
                 >
                 <Palette />
@@ -89,7 +89,7 @@ const StepTwo = ({classes}) => {
 
             <TextField value={secondaryColor} variant="outlined" className={classes.textfields} placeholder="Secondary color" InputProps={{endAdornment:
                 <IconButton
-                  onClick={() => openSecondarySwatch(true)}
+                  onClick={() => openSecondarySwatch(!secondarySwatch)}
                   edge="end"
                 >
                 <Palette />
@@ -99,7 +99,7 @@ const StepTwo = ({classes}) => {
 
               <TextField variant="outlined" className={classes.textfields} placeholder="Background" value={backgroundColor} InputProps={{endAdornment:
                 <IconButton
-                  onClick={() => openBackgroundSwatch(true)}
+                  onClick={() => openBackgroundSwatch(!backgroundSwatch)}
                   edge="end"
                 >
                 <Palette />
@@ -109,7 +109,7 @@ const StepTwo = ({classes}) => {
 
               <TextField variant="outlined" className={classes.textfields} placeholder="Surface" value={surfaceColor} InputProps={{endAdornment:
                 <IconButton
-                  onClick={() => openSurfaceSwatch(true)}
+                  onClick={() => openSurfaceSwatch(!surfaceSwatch)}
                   edge="end"
                 >
                 <Palette />
@@ -119,7 +119,7 @@ const StepTwo = ({classes}) => {
 
               <TextField variant="outlined" className={classes.textfields} placeholder="On primary" value={onPrimaryColor} InputProps={{endAdornment:
                 <IconButton
-                  onClick={() => openOnPrimarySwatch(true)}
+                  onClick={() => openOnPrimarySwatch(!onPrimarySwatch)}
                   edge="end"
                 >
                 <Palette />
@@ -129,7 +129,7 @@ const StepTwo = ({classes}) => {
 
               <TextField variant="outlined" className={classes.textfields} placeholder="On secondary" value={onSecondaryColor} InputProps={{endAdornment:
                 <IconButton
-                  onClick={() => openOnSecondarySwatch(true)}
+                  onClick={() => openOnSecondarySwatch(!onSecondarySwatch)}
                   edge="end"
                 >
                 <Palette />
@@ -139,7 +139,7 @@ const StepTwo = ({classes}) => {
 
               <TextField variant="outlined" className={classes.textfields} placeholder="On background" value={onBackgroundColor} InputProps={{endAdornment:
                 <IconButton
-                  onClick={() => openOnBackgroundSwatch(true)}
+                  onClick={() => openOnBackgroundSwatch(!onBackgroundSwatch)}
                   edge="end"
                 >
                 <Palette />
@@ -149,7 +149,7 @@ const StepTwo = ({classes}) => {
 
               <TextField variant="outlined" className={classes.textfields} placeholder="On surface" value={onSurfaceColor} InputProps={{endAdornment:
                 <IconButton
-                  onClick={() => openOnSurfaceSwatch(true)}
+                  onClick={() => openOnSurfaceSwatch(!onSurfaceSwatch)}
                   edge="end"
                 >
                 <Palette />

@@ -15,14 +15,12 @@ const styles = {
   },
 
   button: {
-    background: '#E0E1DD',
+    background: '#9DD9D2',
     width: '200px',
     alignSelf: 'center',
     marginBottom: '20px',
 
-    '&.MuiButtonBase-root:hover': {
-      background: '#778DA9'
-    }
+  
 
   },
 
@@ -33,7 +31,7 @@ const styles = {
     marginTop: '20px',
     borderRadius: '40px',
     padding: '10px',
-    background: '#1B263B'
+    background: '#FBEDC6'
   },
 
   descImg: {
@@ -44,7 +42,7 @@ const styles = {
   descText: {
     display: 'flex',
     alignItems: 'center',
-    color: '#E0E1DD'
+    color: '#FF8811'
   }
 
 }
@@ -56,7 +54,7 @@ const Home = ({classes}) => {
   return (
       <div className={classes.root}>
 
-        <h1 style={{color: '#0D1B2A'}}>Bienvenido a ARCMS</h1>
+        <h1 style={{color: '#392F5A'}}>Bienvenido a ARCMS</h1>
         <Card className={classes.description} variant="elevation">
           <Typography className={classes.descText}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

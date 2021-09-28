@@ -49,12 +49,12 @@ const StepThree = ({classes}) => {
         <Card className={classes.root} id='step3'>
         <h2 className={classes.steps}>
             Paso 3</h2>
-            <h3 style={{color: 'white'}}>
+            {/* <h3 style={{color: '#FF8811'}}>
               Social media info
-            </h3>
+            </h3> */}
             <div className={classes.stepOneInputs}>
 
-              <h4 style={{color: 'white'}}>
+              <h4 style={{color: '#FF8811'}}>
               Social media
             </h4>
               <TextField className={classes.textfields} variant="outlined" placeholder="Facebook" InputProps={{
@@ -73,7 +73,7 @@ const StepThree = ({classes}) => {
             endAdornment: <PublicOutlined />,
           }}/>
 
-              <h4 style={{color: 'white'}}>
+              <h4 style={{color: '#FF8811'}}>
               Contact info
             </h4>
 
@@ -87,7 +87,7 @@ const StepThree = ({classes}) => {
             endAdornment: <LocationOn />,
           }}/>
 
-              <h4 style={{color: 'white'}}>
+              <h4 style={{color: '#FF8811'}}>
               WhatsApp floating button
             </h4>
 

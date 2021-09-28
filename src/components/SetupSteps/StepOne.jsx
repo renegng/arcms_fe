@@ -50,7 +50,7 @@ const StepOne = ({classes}) => {
         <Card className={classes.root} id='step1' >
           <h2 className={classes.steps}>
             Paso 1</h2>
-            <h3 style={{color: 'white'}}>
+            <h3 style={{color: '#FF8811'}}>
               Information about your site
             </h3>
             <div className={classes.stepOneInputs}>
