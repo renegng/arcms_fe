@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import { withStyles, TextField, Typography, Button, Card, Tab, Tabs, IconButton, InputAdornment} from '@material-ui/core'
-import {Palette} from '@mui/icons-material';
+import { withStyles, TextField, Typography, Button, Card, Tab, Tabs, IconButton} from '@material-ui/core'
+import {Palette, CheckBoxOutlineBlank} from '@mui/icons-material';
 import { SwatchesPicker } from 'react-color'
 
 const styles = {
@@ -77,7 +77,9 @@ const StepTwo = ({classes}) => {
 
               
 
-              <TextField value={primaryColor} variant="outlined" className={classes.textfields} placeholder="Primary color" InputProps={{endAdornment:
+              <TextField value={primaryColor} variant="outlined" className={classes.textfields} placeholder="Primary color" InputProps={{
+                  startAdornment: <CheckBoxOutlineBlank style={{color: `${primaryColor}`, background: `${primaryColor}`, marginRight: '0.5rem'}} />, 
+                  endAdornment:
                 <IconButton
                   onClick={() => openPrimarySwatch(!primarySwatch)}
                   edge="end"
@@ -87,7 +89,7 @@ const StepTwo = ({classes}) => {
                 </IconButton>
             }} />
 
-            <TextField value={secondaryColor} variant="outlined" className={classes.textfields} placeholder="Secondary color" InputProps={{endAdornment:
+            <TextField value={secondaryColor} variant="outlined" className={classes.textfields} placeholder="Secondary color" InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${secondaryColor}`, background: `${secondaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openSecondarySwatch(!secondarySwatch)}
                   edge="end"
@@ -97,7 +99,7 @@ const StepTwo = ({classes}) => {
                 </IconButton>
             }} />
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="Background" value={backgroundColor} InputProps={{endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="Background" value={backgroundColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${backgroundColor}`, background: `${backgroundColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openBackgroundSwatch(!backgroundSwatch)}
                   edge="end"
@@ -107,7 +109,7 @@ const StepTwo = ({classes}) => {
                 </IconButton>
             }}/>
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="Surface" value={surfaceColor} InputProps={{endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="Surface" value={surfaceColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${surfaceColor}`, background: `${surfaceColor}`, marginRight: '0.5rem'}} />, endAdornment:
                 <IconButton
                   onClick={() => openSurfaceSwatch(!surfaceSwatch)}
                   edge="end"
@@ -117,7 +119,7 @@ const StepTwo = ({classes}) => {
                 </IconButton>
             }}/>
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="On primary" value={onPrimaryColor} InputProps={{endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="On primary" value={onPrimaryColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onPrimaryColor}`, background: `${onPrimaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openOnPrimarySwatch(!onPrimarySwatch)}
                   edge="end"
@@ -127,7 +129,7 @@ const StepTwo = ({classes}) => {
                 </IconButton>
             }} />
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="On secondary" value={onSecondaryColor} InputProps={{endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="On secondary" value={onSecondaryColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onSecondaryColor}`, background: `${onSecondaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openOnSecondarySwatch(!onSecondarySwatch)}
                   edge="end"
@@ -137,7 +139,7 @@ const StepTwo = ({classes}) => {
                 </IconButton>
             }}/>
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="On background" value={onBackgroundColor} InputProps={{endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="On background" value={onBackgroundColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onBackgroundColor}`, background: `${onBackgroundColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openOnBackgroundSwatch(!onBackgroundSwatch)}
                   edge="end"
@@ -147,7 +149,7 @@ const StepTwo = ({classes}) => {
                 </IconButton>
             }}/>
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="On surface" value={onSurfaceColor} InputProps={{endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="On surface" value={onSurfaceColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onSurfaceColor}`, background: `${onSurfaceColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openOnSurfaceSwatch(!onSurfaceSwatch)}
                   edge="end"
