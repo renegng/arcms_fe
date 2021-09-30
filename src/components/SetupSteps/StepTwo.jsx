@@ -20,7 +20,7 @@ const styles = {
     steps: {
     textAlign: 'center',
     color: '#392F5A',
-    fontSize: 'calc(1rem + 3vw)'
+    fontSize: '1.75rem'
   },
 
   textfields: {
@@ -70,14 +70,14 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
         <h2 className={classes.steps} >
             Paso 2</h2>
             <h3 style={{color: '#FF8811'}}>
-              Choose your color palette
+              Elige la paleta de colores del sitio
             </h3>
             
             <div className={classes.stepOneInputs}>
 
               
 
-              <TextField value={primaryColor} variant="outlined" className={classes.textfields} placeholder="Primary color" InputProps={{
+              <TextField value={primaryColor} variant="outlined" className={classes.textfields} placeholder="Color primario" InputProps={{
                   startAdornment: <CheckBoxOutlineBlank style={{color: `${primaryColor}`, background: `${primaryColor}`, marginRight: '0.5rem'}} />, 
                   endAdornment:
                 <IconButton
@@ -89,7 +89,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 </IconButton>
             }} />
 
-            <TextField value={secondaryColor} variant="outlined" className={classes.textfields} placeholder="Secondary color" InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${secondaryColor}`, background: `${secondaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
+            <TextField value={secondaryColor} variant="outlined" className={classes.textfields} placeholder="Color secundario" InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${secondaryColor}`, background: `${secondaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openSecondarySwatch(!secondarySwatch)}
                   edge="end"
@@ -99,7 +99,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 </IconButton>
             }} />
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="Background" value={backgroundColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${backgroundColor}`, background: `${backgroundColor}`, marginRight: '0.5rem'}} />,endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="Color de fondo" value={backgroundColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${backgroundColor}`, background: `${backgroundColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openBackgroundSwatch(!backgroundSwatch)}
                   edge="end"
@@ -109,7 +109,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 </IconButton>
             }}/>
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="Surface" value={surfaceColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${surfaceColor}`, background: `${surfaceColor}`, marginRight: '0.5rem'}} />, endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="Color de la superficie" value={surfaceColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${surfaceColor}`, background: `${surfaceColor}`, marginRight: '0.5rem'}} />, endAdornment:
                 <IconButton
                   onClick={() => openSurfaceSwatch(!surfaceSwatch)}
                   edge="end"
@@ -119,7 +119,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 </IconButton>
             }}/>
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="On primary" value={onPrimaryColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onPrimaryColor}`, background: `${onPrimaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="Sobre color primario" value={onPrimaryColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onPrimaryColor}`, background: `${onPrimaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openOnPrimarySwatch(!onPrimarySwatch)}
                   edge="end"
@@ -129,7 +129,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 </IconButton>
             }} />
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="On secondary" value={onSecondaryColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onSecondaryColor}`, background: `${onSecondaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="Sobre color secundario" value={onSecondaryColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onSecondaryColor}`, background: `${onSecondaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openOnSecondarySwatch(!onSecondarySwatch)}
                   edge="end"
@@ -139,7 +139,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 </IconButton>
             }}/>
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="On background" value={onBackgroundColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onBackgroundColor}`, background: `${onBackgroundColor}`, marginRight: '0.5rem'}} />,endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="Sobre color de fondo" value={onBackgroundColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onBackgroundColor}`, background: `${onBackgroundColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openOnBackgroundSwatch(!onBackgroundSwatch)}
                   edge="end"
@@ -149,7 +149,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 </IconButton>
             }}/>
 
-              <TextField variant="outlined" className={classes.textfields} placeholder="On surface" value={onSurfaceColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onSurfaceColor}`, background: `${onSurfaceColor}`, marginRight: '0.5rem'}} />,endAdornment:
+              <TextField variant="outlined" className={classes.textfields} placeholder="Sobre color superficie" value={onSurfaceColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onSurfaceColor}`, background: `${onSurfaceColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
                   onClick={() => openOnSurfaceSwatch(!onSurfaceSwatch)}
                   edge="end"

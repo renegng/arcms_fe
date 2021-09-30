@@ -69,10 +69,10 @@ const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
 
         <TabContext value={value}>
         <Tabs centered={true} value={value} TabIndicatorProps={{ style: { background: "#392F5A"} }} onChange={handleTabChange} className={classes.tabContainer}>
-        <Tab label="step 1" value="1" />
-        <Tab label="step 2" value="2" />
-        <Tab label="step 3" value="3" />
-        <Tab label='step 4' value='4' />
+        <Tab label="Paso 1" value="1" />
+        <Tab label="Paso 2" value="2" />
+        <Tab label="Paso 3" value="3" />
+        <Tab label='Paso 4' value='4' />
       </Tabs>
         <TabPanel value='1'>
           <StepOne handleTabChange={handleTabChange} nextValue={'2'}/>

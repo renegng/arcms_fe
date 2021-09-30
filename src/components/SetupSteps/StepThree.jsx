@@ -20,7 +20,7 @@ const styles = {
     steps: {
     textAlign: 'center',
     color: '#392F5A',
-    fontSize: 'calc(1rem + 3vw)'
+    fontSize: '1.75rem'
   },
 
   textfields: {
@@ -55,7 +55,7 @@ const StepThree = ({classes, handleTabChange, nextValue}) => {
             <div className={classes.stepOneInputs}>
 
               <h4 style={{color: '#FF8811'}}>
-              Social media
+              Redes sociales
             </h4>
               <TextField className={classes.textfields} variant="outlined" placeholder="Facebook" InputProps={{
             endAdornment: <FacebookOutlined />,
@@ -69,29 +69,29 @@ const StepThree = ({classes, handleTabChange, nextValue}) => {
               <TextField className={classes.textfields} variant="outlined" placeholder="YouTube" InputProps={{
             endAdornment: <YouTube />,
           }}/>
-              <TextField className={classes.textfields}  variant="outlined" placeholder="Website" InputProps={{
+              <TextField className={classes.textfields}  variant="outlined" placeholder="Sitio de web" InputProps={{
             endAdornment: <PublicOutlined />,
           }}/>
 
               <h4 style={{color: '#FF8811'}}>
-              Contact info
+              Información de contacto
             </h4>
 
               <TextField className={classes.textfields} variant="outlined" placeholder="Email" InputProps={{
             endAdornment: <Email />,
           }}/>
-              <TextField className={classes.textfields}  variant="outlined" placeholder="Phone number" InputProps={{
+              <TextField className={classes.textfields}  variant="outlined" placeholder="Número de teléfono" InputProps={{
             endAdornment: <Phone />,
           }}/>
-              <TextField className={classes.textfields}  variant="outlined" placeholder="Location" InputProps={{
+              <TextField className={classes.textfields}  variant="outlined" placeholder="Ubicación" InputProps={{
             endAdornment: <LocationOn />,
           }}/>
 
               <h4 style={{color: '#FF8811'}}>
-              WhatsApp floating button
+              Botón flotante de WhatsApp 
             </h4>
 
-              <TextField className={classes.textfields} variant="outlined" placeholder="WhatsApp number" InputProps={{
+              <TextField className={classes.textfields} variant="outlined" placeholder="Número de WhatsApp" InputProps={{
             endAdornment: <WhatsApp />,
           }}/>
               </div>

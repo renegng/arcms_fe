@@ -18,7 +18,7 @@ const styles = {
     steps: {
     textAlign: 'center',
     color: '#392F5A',
-    fontSize: 'calc(1rem + 3vw)'
+    fontSize: '1.75rem'
   },
 
   textfields: {

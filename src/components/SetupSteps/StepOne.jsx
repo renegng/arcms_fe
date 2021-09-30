@@ -18,7 +18,7 @@ const styles = {
     steps: {
     textAlign: 'center',
     color: '#392F5A',
-    fontSize: 'calc(1rem + 3vw)'
+    fontSize: '1.75rem'
   },
 
   textfields: {
@@ -51,17 +51,17 @@ const StepOne = ({classes, handleTabChange, nextValue}) => {
           <h2 className={classes.steps}>
             Paso 1</h2>
             <h3 style={{color: '#FF8811'}}>
-              Information about your site
+              Información sobre el sitio
             </h3>
             <div className={classes.stepOneInputs}>
 
-              <TextField className={classes.textfields} variant="outlined" placeholder="Website name" />
+              <TextField className={classes.textfields} variant="outlined" placeholder="Nombre del sitio" />
 
-              <TextField className={classes.textfields}  placeholder="Description of the site" multiline rows={4} variant="outlined" />
+              <TextField className={classes.textfields}  placeholder="Descripcion del sitio" multiline rows={4} variant="outlined" />
 
-              <TextField className={classes.textfields}  variant="outlined" placeholder="Site slogan"/>
+              <TextField className={classes.textfields}  variant="outlined" placeholder="Lema del sitio"/>
 
-              <TextField className={classes.textfields}  variant="outlined" placeholder="Institution name" />
+              <TextField className={classes.textfields}  variant="outlined" placeholder="Nombre de la Institución" />
 
               {/*main logo upload*/}
               {/* menu/icon logo upload */}
