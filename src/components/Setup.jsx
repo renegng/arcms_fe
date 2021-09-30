@@ -2,8 +2,9 @@ import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import { withStyles, Tab, Tabs, AppBar} from '@material-ui/core'
 import {TabList, TabPanel, TabContext} from '@mui/lab'
-import {StepOne, StepThree, StepTwo} from './SetupSteps'
+import {StepOne, StepThree, StepTwo, StepFour} from './SetupSteps'
 import { SketchPicker } from 'react-color'
+import {theme} from '../theme'
 
 
 const styles = {
@@ -17,6 +18,7 @@ const styles = {
 
   tabContainer: {
     background: '#9DD9D2',
+    width: '100vw'
   }
 }
 
@@ -62,23 +64,27 @@ const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
   return (
       <div className={classes.root}>
       <main>
-        <h1 style={{color: '#FF8811'}}>Configuración del sitio web de ARCMS</h1>
+        <h1 style={{color: '#392F5A'}}>Configuración del sitio web de ARCMS</h1>
       </main>
 
         <TabContext value={value}>
-        <Tabs onChange={handleTabChange} textColor='#392F5A' indicatorColor='#392F5A' className={classes.tabContainer}>
+        <Tabs centered={true} value={value} TabIndicatorProps={{ style: { background: "#392F5A"} }} onChange={handleTabChange} className={classes.tabContainer}>
         <Tab label="step 1" value="1" />
         <Tab label="step 2" value="2" />
         <Tab label="step 3" value="3" />
+        <Tab label='step 4' value='4' />
       </Tabs>
         <TabPanel value='1'>
-          <StepOne />
+          <StepOne handleTabChange={handleTabChange} nextValue={'2'}/>
         </TabPanel>
         <TabPanel value='2'>
-          <StepTwo />
+          <StepTwo handleTabChange={handleTabChange} nextValue={'3'} />
         </TabPanel>
         <TabPanel value='3'>
-          <StepThree />
+          <StepThree handleTabChange={handleTabChange} nextValue={'4'}/>
+        </TabPanel>
+        <TabPanel value='4'>
+          <StepFour handleTabChange={handleTabChange} nextValue={'4'}/>
         </TabPanel>
 
 

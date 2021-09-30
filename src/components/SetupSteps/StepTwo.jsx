@@ -44,7 +44,7 @@ const styles = {
 }
 
 
-const StepTwo = ({classes}) => {
+const StepTwo = ({classes, handleTabChange, nextValue}) => {
 
     const [secondarySwatch, openSecondarySwatch] = useState(false)
     const [primarySwatch, openPrimarySwatch] = useState(false)
@@ -159,7 +159,7 @@ const StepTwo = ({classes}) => {
                 </IconButton>
             }}/>
               </div>
-            <Button className={classes.buttons} variant='outlined'>
+            <Button onClick={() => handleTabChange(null, nextValue)} className={classes.buttons} variant='outlined'>
               Próximo Paso
             </Button>
         </Card>

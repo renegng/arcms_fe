@@ -42,26 +42,26 @@ const styles = {
 }
 
 
-const StepOne = ({classes, handleTabChange, nextValue}) => {
+const StepFour = ({classes, handleTabChange, nextValue}) => {
 
 
 
     return (
         <Card className={classes.root} id='step1' >
           <h2 className={classes.steps}>
-            Paso 1</h2>
+            Paso 4</h2>
             <h3 style={{color: '#FF8811'}}>
-              Information about your site
+              Info
             </h3>
             <div className={classes.stepOneInputs}>
 
-              <TextField className={classes.textfields} variant="outlined" placeholder="Website name" />
+              {/* <TextField className={classes.textfields} variant="outlined" placeholder="Website name" />
 
               <TextField className={classes.textfields}  placeholder="Description of the site" multiline rows={4} variant="outlined" />
 
               <TextField className={classes.textfields}  variant="outlined" placeholder="Site slogan"/>
 
-              <TextField className={classes.textfields}  variant="outlined" placeholder="Institution name" />
+              <TextField className={classes.textfields}  variant="outlined" placeholder="Institution name" /> */}
 
               {/*main logo upload*/}
               {/* menu/icon logo upload */}
@@ -80,4 +80,4 @@ const StepOne = ({classes, handleTabChange, nextValue}) => {
 }
 
 
-export default withStyles(styles)(StepOne)
+export default withStyles(styles)(StepFour)

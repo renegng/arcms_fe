@@ -41,7 +41,7 @@ const styles = {
   },
 }
 
-const StepThree = ({classes}) => {
+const StepThree = ({classes, handleTabChange, nextValue}) => {
 
 
 
@@ -96,7 +96,7 @@ const StepThree = ({classes}) => {
           }}/>
               </div>
 
-            <Button variant='outlined' className={classes.buttons}>
+            <Button variant='outlined' className={classes.buttons} onClick={() => handleTabChange(null, nextValue)}>
             Próximo Paso
             </Button>
         </Card>
