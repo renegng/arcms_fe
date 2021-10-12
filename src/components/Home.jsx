@@ -42,7 +42,7 @@ const styles = {
   descText: {
     display: 'flex',
     alignItems: 'center',
-    color: '#FF8811'
+    color: '#392F5A'
   }
 
 }
@@ -54,11 +54,11 @@ const Home = ({classes}) => {
   return (
       <div className={classes.root}>
 
-        <h1 style={{color: '#392F5A'}}>Bienvenido a ARCMS</h1>
+        <h1 style={{color: '#FF8811'}}>Bienvenida a ARCMS</h1>
         <Card className={classes.description} variant="elevation">
           <Typography className={classes.descText}>
             <div style={{textAlign: 'left', padding: '10px 0 10px 10px'}}>
-            <p>Bienvenido a la configuración de ARCMS. Al hacer clic en 'Iniciar', se le llevará a través de la configuración del sitio paso a paso.</p>
+            <p>Bienvenida a la configuración de ARCMS. Al hacer clic en 'Iniciar', se le llevará a través de la configuración del sitio paso a paso.</p>
             
             <p><b>Paso 1</b> le pedirá información general sobre su sitio, como el nombre y la descripción.</p>
             
