@@ -30,15 +30,21 @@ const styles = {
 
   stepOneInputs: {
     display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    // alignItems: 'center'
+    // width: '100%',
+    justifyContent: 'space-evenly'
   },
 
   buttons: {
     background: '#9DD9D2',
     // marginTop: '20rem'
   },
+
+  inputColumns: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    padding: '2rem'
+  }
 }
 
 const StepThree = ({classes, handleTabChange, nextValue}) => {
@@ -53,6 +59,8 @@ const StepThree = ({classes, handleTabChange, nextValue}) => {
               Social media info
             </h3> */}
             <div className={classes.stepOneInputs}>
+
+              <div className={classes.inputColumns}>
 
               <h4 style={{color: '#FF8811'}}>
               Redes sociales
@@ -72,6 +80,9 @@ const StepThree = ({classes, handleTabChange, nextValue}) => {
               <TextField className={classes.textfields}  variant="outlined" placeholder="Sitio de web" InputProps={{
             endAdornment: <PublicOutlined />,
           }}/>
+          </div>
+
+          <div className={classes.inputColumns}>
 
               <h4 style={{color: '#FF8811'}}>
               Información de contacto
@@ -94,6 +105,7 @@ const StepThree = ({classes, handleTabChange, nextValue}) => {
               <TextField className={classes.textfields} variant="outlined" placeholder="Número de WhatsApp" InputProps={{
             endAdornment: <WhatsApp />,
           }}/>
+          </div>
               </div>
 
             <Button variant='outlined' className={classes.buttons} onClick={() => handleTabChange(null, nextValue)}>

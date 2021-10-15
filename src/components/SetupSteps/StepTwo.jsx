@@ -31,15 +31,21 @@ const styles = {
 
   stepOneInputs: {
     display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    // alignItems: 'center'
+    // width: '100%',
+    justifyContent: 'space-evenly'
   },
 
   buttons: {
     background: '#9DD9D2',
     // marginTop: '20rem'
   },
+
+  inputColumns: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    padding: '2rem'
+  }
     
 }
 
@@ -75,7 +81,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
             
             <div className={classes.stepOneInputs}>
 
-              
+              <div className={classes.inputColumns}>
 
               <TextField value={primaryColor} variant="outlined" className={classes.textfields} placeholder="Color primario" InputProps={{
                   startAdornment: <CheckBoxOutlineBlank style={{color: `${primaryColor}`, background: `${primaryColor}`, marginRight: '0.5rem'}} />, 
@@ -118,6 +124,8 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 {surfaceSwatch ? <SwatchesPicker className={classes.colorPicker} onChangeComplete={(color, event) => {setSurfaceColor(color.hex); openSurfaceSwatch(false)}}/> : null}
                 </IconButton>
             }}/>
+            </div>
+            <div className={classes.inputColumns}>
 
               <TextField variant="outlined" className={classes.textfields} placeholder="Sobre color primario" value={onPrimaryColor} InputProps={{startAdornment: <CheckBoxOutlineBlank style={{color: `${onPrimaryColor}`, background: `${onPrimaryColor}`, marginRight: '0.5rem'}} />,endAdornment:
                 <IconButton
@@ -158,6 +166,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                 {onSurfaceSwatch ? <SwatchesPicker className={classes.colorPicker} onChangeComplete={(color, event) => {setOnSurfaceColor(color.hex); openOnSurfaceSwatch(false)}}/> : null}
                 </IconButton>
             }}/>
+            </div>
               </div>
             <Button onClick={() => handleTabChange(null, nextValue)} className={classes.buttons} variant='outlined'>
               Próximo Paso
