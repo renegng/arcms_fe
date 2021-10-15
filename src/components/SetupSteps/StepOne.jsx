@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import { withStyles, TextField, Typography, Button, Card, Tab, Tabs} from '@material-ui/core'
+import { withStyles, TextField, Typography, Button, Card, IconButton} from '@material-ui/core'
+import { Upload } from '@mui/icons-material'
 
 const styles = {
     root: {
@@ -28,9 +29,8 @@ const styles = {
 
   stepOneInputs: {
     display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    // alignItems: 'center'
+    // width: '100%',
+    justifyContent: 'space-evenly'
   },
 
   buttons: {
@@ -38,6 +38,12 @@ const styles = {
     // marginTop: '20rem'
   },
 
+  inputColumns: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    padding: '2rem'
+  }
 
 }
 
@@ -55,16 +61,25 @@ const StepOne = ({classes, handleTabChange, nextValue}) => {
             </h3>
             <div className={classes.stepOneInputs}>
 
-              <TextField className={classes.textfields} variant="outlined" placeholder="Nombre del sitio" />
+              <div className={classes.inputColumns}>
+                <TextField className={classes.textfields} variant="outlined" placeholder="Nombre del sitio" />
 
               <TextField className={classes.textfields}  placeholder="Descripcion del sitio" multiline rows={4} variant="outlined" />
-
+              
               <TextField className={classes.textfields}  variant="outlined" placeholder="Lema del sitio"/>
 
               <TextField className={classes.textfields}  variant="outlined" placeholder="Nombre de la Institución" />
 
-              {/*main logo upload*/}
-              {/* menu/icon logo upload */}
+
+              </div>
+
+              <div className={classes.inputColumns}>
+                <TextField type="file" className={classes.textfields}  variant="outlined" helperText="Icono de menu hamburguesa" InputProps={{endAdornment: <Upload /> }}/>
+                <TextField type="file" className={classes.textfields}  variant="outlined" helperText="Favicon" InputProps={{endAdornment: <Upload /> }} />
+                <TextField type="file" className={classes.textfields}  variant="outlined" helperText="Logo primario" InputProps={{endAdornment: <Upload /> }}/>
+                
+              </div>
+              
               
             </div>
 <Button variant='outlined' className={classes.buttons} onClick={() => handleTabChange(null, nextValue)}>
