@@ -24,7 +24,11 @@ const styles = {
 
   textfields: {
     marginBottom: '1rem',
-    background: '#FEF9EC'
+    background: '#FEF9EC',
+
+    '&.upload': {
+      marginTop: '0.5rem'
+    }
   },
 
   stepOneInputs: {
@@ -42,7 +46,13 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    padding: '2rem'
+    padding: '2rem',
+  },
+
+  uploadInputs: {
+    display:'flex',
+    flexDirection: 'column',
+    marginBottom: '1rem'
   }
 
 }
@@ -74,9 +84,25 @@ const StepOne = ({classes, handleTabChange, nextValue}) => {
               </div>
 
               <div className={classes.inputColumns}>
-                <TextField type="file" className={classes.textfields}  variant="outlined" helperText="Icono de menu hamburguesa" InputProps={{endAdornment: <Upload /> }}/>
-                <TextField type="file" className={classes.textfields}  variant="outlined" helperText="Favicon" InputProps={{endAdornment: <Upload /> }} />
-                <TextField type="file" className={classes.textfields}  variant="outlined" helperText="Logo primario" InputProps={{endAdornment: <Upload /> }}/>
+                <div className={classes.uploadInputs}>
+                  <span>Icono de menu hamburguesa</span>
+                  <TextField type="file" className={`${classes.textfields} upload`}  variant="outlined" InputProps={{endAdornment: <IconButton><Upload /></IconButton> }}/>
+                </div>
+                <div className={classes.uploadInputs}>
+                  <span>Favicon</span>
+                  <TextField type="file" className={`${classes.textfields} upload`}  variant="outlined" InputProps={{endAdornment: <IconButton><Upload /></IconButton> }} />
+                </div>
+                <div className={classes.uploadInputs}>
+                  <span>Logo primario</span>
+                  <TextField type="file" className={`${classes.textfields} upload`}  variant="outlined"  InputProps={{endAdornment: <IconButton><Upload /></IconButton> }}/>
+                </div>
+                
+
+
+
+                
+
+                
                 
               </div>
               
