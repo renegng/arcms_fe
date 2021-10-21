@@ -11,7 +11,8 @@ const styles = {
     flexDirection: 'column',
     // height: '100vh',
     // background: '#778DA9',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: '3rem'
   },
 
   button: {
