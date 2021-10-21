@@ -57,7 +57,7 @@ const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
           </IconButton>
           <Menu open={menuOpen} anchorEl={anchorEl} onClose={handleMenuClose}>
             <MenuItem onClick={() => history.push('/')}>
-              Home
+              Pagina de Inicio
             </MenuItem>
             <MenuItem>
             Configuraciones Avanzadas
