@@ -72,7 +72,7 @@ const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
       
 
       <main>
-        <h1 style={{color: '#392F5A'}}>Configuración del sitio web de ARCMS</h1>
+        <h1 style={{color: '#392F5A'}}>Configuración del sitio web de Remotely</h1>
       </main>
 
         <TabContext value={value}>
