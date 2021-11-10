@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import { withStyles, Tab, Tabs, AppBar} from '@material-ui/core'
+import {useHistory } from 'react-router-dom'
+import { withStyles, Tab, Tabs, AppBar, Toolbar, IconButton, Menu, MenuItem} from '@material-ui/core'
 import {TabList, TabPanel, TabContext} from '@mui/lab'
+import {Menu as MenuIcon} from '@mui/icons-material';
 import {StepOne, StepThree, StepTwo, StepFour} from './SetupSteps'
-import { SketchPicker } from 'react-color'
-import {theme} from '../theme'
 
 
 const styles = {
@@ -19,41 +19,26 @@ const styles = {
   tabContainer: {
     background: '#9DD9D2',
     width: '100vw'
+  },
+
+  topBar: {
+    // background: '#392F5A'
   }
 }
 
 const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
-
-  /*
-  step1 fields:
-  - name
-  - description
-  - slogan
-  - institution name
-  -main logo
-  -menu/icon logo
-
-  step2 fields:
-  -color palette:
-    - primary
-    - secondary
-    - background
-    - surface
-    - on primary
-    - on secondary
-    - on background
-    - on surface
-
-  step3 fields
-  - social media (fb, twitter, ig, youtube, website)
-  - contact us/info
-  - whatsapp floating button (yes/no/whatsapp contact)
-
-
-
-  */
-
+  const history = useHistory()
   const [value, setValue] = React.useState('1');
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const menuOpen = Boolean(anchorEl);
+
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
@@ -61,10 +46,33 @@ const Setup = ({classes, orgData, searchOrgs, addOrg}) => {
 
 
 
+
   return (
       <div className={classes.root}>
+        <AppBar className="topBar" color='secondary'>
+        <Toolbar>
+          <div>
+            <IconButton onClick={handleMenuOpen} style={{color: 'white'}}>
+            <MenuIcon />
+          </IconButton>
+          <Menu open={menuOpen} anchorEl={anchorEl} onClose={handleMenuClose}>
+            <MenuItem onClick={() => history.push('/')}>
+              Pagina de Inicio
+            </MenuItem>
+            <MenuItem>
+            Configuraciones Avanzadas
+            </MenuItem>
+
+        </Menu>
+          </div>
+          
+          Remotely
+        </Toolbar>
+      </AppBar>
+      
+
       <main>
-        <h1 style={{color: '#392F5A'}}>Configuración del sitio web de ARCMS</h1>
+        <h1 style={{color: '#392F5A'}}>Configuración del sitio web de Remotely</h1>
       </main>
 
         <TabContext value={value}>

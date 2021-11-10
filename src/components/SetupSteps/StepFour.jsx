@@ -51,7 +51,7 @@ const StepFour = ({classes, handleTabChange, nextValue}) => {
           <h2 className={classes.steps}>
             Paso 4</h2>
             <h3 style={{color: '#FF8811'}}>
-              Info
+              Configuracion de Protocolo
             </h3>
             <div className={classes.stepOneInputs}>
 
