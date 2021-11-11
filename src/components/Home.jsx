@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import {useHistory } from 'react-router-dom'
-import { withStyles, TextField, Typography, Button, Card } from '@material-ui/core'
+import { withStyles, TextField, Typography, Button, Card, Dialog, DialogContent, DialogTitle, DialogContentText } from '@material-ui/core'
 import descriptionImg from '../images/user_f_03.svg'
+import {GoogleButton} from 'react-google-button'
+import { textAlign } from '@mui/system'
 
 
 const styles = {
@@ -50,12 +52,20 @@ const styles = {
     border: '1px solid black',
     borderRadius: '10px',
     padding: '1rem'
+  },
+
+  dialogCont: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center'
   }
 
 }
 
 const Home = ({classes}) => {
   const history = useHistory()
+  const [signInOpen, setSignInOpen] = useState(true)
 
 
   return (
@@ -78,10 +88,22 @@ const Home = ({classes}) => {
           <img className={classes.descImg} src={descriptionImg} alt="description" />
           </div>
           <Button variant='outlined' className={classes.button} onClick={() => history.push('/setup')}>Iniciar</Button>
-
+          
         </Card>
-        
 
+        <Dialog open={signInOpen}>
+          <DialogTitle className={classes.dialogCont}>
+          {"Configurar cuenta de administrador con Google"}
+        </DialogTitle>
+        <DialogContent className={classes.dialogCont}>
+          <DialogContentText className={classes.dialogCont}>
+            Para continuar, se necesita una cuenta de Google para la configuración del sitio.
+          </DialogContentText>
+          <GoogleButton onClick={() => setSignInOpen(false)}/>
+        </DialogContent>
+        
+        </Dialog>
+        
     </div>
   )
 }
