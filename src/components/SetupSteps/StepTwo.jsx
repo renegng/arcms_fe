@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import { connect } from 'react-redux'
 import { withStyles, TextField, Typography, Button, Card, Tab, Tabs, IconButton} from '@material-ui/core'
 import {Palette, CheckBoxOutlineBlank} from '@mui/icons-material';
@@ -64,18 +64,27 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
     const [primaryColor, setPrimaryColor] = useState('#9DD9D2')
     const [secondaryColor, setSecondaryColor] = useState('#392F5A')
     const [backgroundColor, setBackgroundColor] = useState('#FFF8F0')
-    const [surfaceColor, setSurfaceColor] = useState('#FDF3D8')
+    const [surfaceColor, setSurfaceColor] = useState('#FBEDC6')
     const [onPrimaryColor, setOnPrimaryColor] = useState('#000000')
     const [onSecondaryColor, setOnSecondaryColor] = useState('#ffffff')
     const [onBackgroundColor, setOnBackgroundColor] = useState('')
-    const [onSurfaceColor, setOnSurfaceColor] = useState('')
+    const [onSurfaceColor, setOnSurfaceColor] = useState('#FF8811')
+
+    const changeBackgroundColor = (e, color) => {
+      document.getElementById('body').style.background = color
+    }
+
+    const changeTabsColor = (color) => {
+      // document.getElementsByClassName('div.MuiTabs-root.tabContainer-2').style.color = color
+      //might have to save this to state so as to import it into theme palette via redux
+    }
 
 
     return (
-        <Card className={classes.root} id='step2' >
+        <Card className={classes.root} id='step2' style={{background: `${surfaceColor}`}}>
         <h2 className={classes.steps} >
             Paso 2</h2>
-            <h3 style={{color: '#FF8811'}}>
+            <h3 style={{color: `${onSurfaceColor}`}}>
               Elige la paleta de colores del sitio
             </h3>
             
@@ -91,7 +100,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                   edge="end"
                 >
                 <Palette />
-                {primarySwatch ? <SwatchesPicker className={classes.colorPicker} onChangeComplete={(color, event) => {setPrimaryColor(color.hex); openPrimarySwatch(false)}}/> : null}
+                {primarySwatch ? <SwatchesPicker className={classes.colorPicker} onChangeComplete={(color, event) => {setPrimaryColor(color.hex); openPrimarySwatch(false); changeTabsColor(color)}}/> : null}
                 </IconButton>
             }} />
 
@@ -111,7 +120,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
                   edge="end"
                 >
                 <Palette />
-                {backgroundSwatch ? <SwatchesPicker className={classes.colorPicker} onChangeComplete={(color, event) => {setBackgroundColor(color.hex); openBackgroundSwatch(false)}}/> : null}
+                {backgroundSwatch ? <SwatchesPicker className={classes.colorPicker} onChangeComplete={(color, e) => {setBackgroundColor(color.hex); openBackgroundSwatch(false); changeBackgroundColor(e, color.hex)}}/> : null}
                 </IconButton>
             }}/>
 
@@ -168,7 +177,7 @@ const StepTwo = ({classes, handleTabChange, nextValue}) => {
             }}/>
             </div>
               </div>
-            <Button onClick={() => handleTabChange(null, nextValue)} className={classes.buttons} variant='outlined'>
+            <Button onClick={() => handleTabChange(null, nextValue)} className={classes.buttons} variant='outlined' style={{background: `${primaryColor}`}}>
               Próximo Paso
             </Button>
         </Card>
