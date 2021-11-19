@@ -72,6 +72,8 @@ const Home = ({ classes }) => {
   const history = useHistory();
   const [signInOpen, setSignInOpen] = useState(true);
 
+  //need to return google auth token
+
   return (
     <div className={classes.root}>
       <h1 style={{ color: "#FF8811" }}>Bienvenida a Remotely</h1>
