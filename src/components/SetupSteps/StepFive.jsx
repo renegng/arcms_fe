@@ -51,11 +51,13 @@ const styles = {
   },
 };
 
-const StepFour = ({ classes, handleTabChange, nextValue }) => {
+const StepFive = ({ classes, handleTabChange, nextValue }) => {
   return (
     <Card className={classes.root} id="step1">
-      <h2 className={classes.steps}>Paso 4</h2>
-      <h3 style={{ color: "#FF8811" }}>Configuracion de Protocolo.</h3>
+      <h2 className={classes.steps}>Paso 5</h2>
+      <h3 style={{ color: "#FF8811" }}>
+        Configuracion de terminos de servicios.
+      </h3>
 
       <Button
         variant="outlined"
@@ -81,10 +83,10 @@ const StepFour = ({ classes, handleTabChange, nextValue }) => {
         className={classes.buttons}
         onClick={() => handleTabChange(null, nextValue)}
       >
-        Próximo Paso
+        Terminar Configuracion
       </Button>
     </Card>
   );
 };
 
-export default withStyles(styles)(StepFour);
+export default withStyles(styles)(StepFive);
