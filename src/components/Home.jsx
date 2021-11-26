@@ -106,6 +106,18 @@ const Home = ({ classes }) => {
               principal, número de teléfono, ubicación, y número de WhatsApp.
             </p>
 
+            <p className={classes.steps}>
+              <b>Paso 4</b> le mostrará la plantilla de un protocolo para
+              definir las funciones de su sitio, que se puede acceder y editar a
+              través de Google docs
+            </p>
+
+            <p className={classes.steps}>
+              <b>Paso 5</b> Al igual que el paso 4, le mostrará una plantilla
+              para los términos de servicio de su sitio que se puede ver y
+              descargar a través de Google docs.
+            </p>
+
             <p>
               Si elige avanzar rápidamente a través de los pasos sin realizar
               ninguna selección, se aplicará la configuración predeterminada.
