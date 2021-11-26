@@ -137,7 +137,11 @@ const Home = ({ classes }) => {
             Para continuar, se necesita una cuenta de Google para la
             configuración del sitio.
           </DialogContentText>
-          <div class="g-signin2" data-onsuccess="onSignIn" />
+          <div
+            onClick={() => setSignInOpen(false)}
+            class="g-signin2"
+            data-onsuccess="onSignIn"
+          />
         </DialogContent>
       </Dialog>
     </div>
